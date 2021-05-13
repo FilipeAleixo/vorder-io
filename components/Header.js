@@ -11,7 +11,9 @@ const Header = (props) => (
         <div className="content">
             <div className="inner">
                 <h1>Vorder</h1>
-                <p>From dozens of clicks to one voice command. Trade crypto as fast as you speak and never miss a trading opportunity again.</p>
+                <h3>Trade crypto as fast as you speak</h3>
+                <h3>And never miss a trade again.</h3>
+                <p> From traders to traders </p>
             </div>
         </div>
         <nav>
