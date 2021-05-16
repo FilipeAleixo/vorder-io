@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import faMicrophone from '@fortawesome/fontawesome-free-solid/faMicrophone'
 
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
             {/*<span className="icon fa-microphone"></span>*/}
-            <FontAwesomeIcon icon={faMicrophone} transform="grow-15" />
+            <FontAwesomeIcon icon={faMicrophone} transform="shrink-9 up-2.5" />
         </div>
         <div className="content">
             <div className="inner">
