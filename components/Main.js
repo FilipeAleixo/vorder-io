@@ -31,70 +31,73 @@ class Main extends React.Component {
         <article id="try" className={`${this.props.article === 'try' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Try Vorder</h2>
           <h3>Beta phase</h3>
-          <p>We are currently in Beta phase. At this stage we are testing our concept only with the Binance Testnet API for BTC/USDT and ETH/USDT. Follow the instructions below if you wish to become a Beta tester.</p>
+          <p>We are currently in Beta phase. If you wish to become a Beta tester, follow the instructions below.</p>
+          <p><u>Note</u>: At this stage we are testing our concept with the Binance Futures Testnet for the BTC/USDT and ETH/USDT pairs. We're testing with the Futures Testnet because the Binance Spot Testnet doesn't have a graphical interface.</p>
           <h3>Vorder Beta Registration</h3>
           <ul>
             <li>Register <a href="https://app.vorder.io/signup">here</a>.</li>
             <li>Click the confirmation link sent to your inbox.</li>
-            <li>Go to <a href="https://app.vorder.io">app.vorder.io</a> and login with your credentials.</li>
+            <li>Go to <a href="https://app.vorder.io">app.vorder.io</a> and log in with your credentials.</li>
           </ul>
           <h3>Set up Binance Futures Testnet</h3>
           <ul>
             <li>Go to <a href="https://testnet.binancefuture.com/en/futures/BTCUSDT">Binance Futures Testnet</a> and register there</li>
-            <li>Log into the account you've just created and then click "API Key"</li>
+            <li>Log into the Testnet account you've just created and then click "API Key".</li>
             <br></br>
             <span className="image fit"><img src="/static/images/binance_future.jpg" alt="" /></span>
             <li>Open <a href="https://app.vorder.io/">app.vorder.io</a> in another tab and click the icon at the lower left corner.</li>
             <br></br>
             <span className="image fit"><img src="/static/images/vorder_options.jpg" alt="" /></span>
-            <li>In the form that appears, fill in the fields "API Key" and "API Secret" with those from your Binance Futures Testnet account and submit.</li>
+            <li>In the form that appears, fill in the fields "API Key" and "API Secret" with those from your Binance Futures Testnet account, and then submit.</li>
           </ul>
-          <h3>You're ready to try Vorder</h3>
+          <h3>Ready to try Vorder?</h3>
           <ul>
-            <li>You're all set to try your first voice order. Go back to <a href="https://app.vorder.io">app.vorder.io</a> and click the microphone button. The center of the microphone will turn blue after a loading period and you'll hear a female voice saying "I'm ready".</li>
+            <li>You're all set to place your first voice order, so buckle up! Go back to <a href="https://app.vorder.io">app.vorder.io</a> and click the microphone button. The center of the microphone will turn blue after a loading period and you'll hear a female voice saying "I'm ready".</li>
             <br></br>
             <span className="image fit"><img src="/static/images/vorder_waiting.jpg" alt="" /></span>
-            <li>While the microphone is blue, if you say "Terminator" you'll hear Vorder responding "Waiting for order". The center of the microphone will turn red to indicate that your voice is now being recorded, and a wave form indicating your microphone levels will appear at the center of the screen.</li>
+            <li>While the microphone is blue, if you say "Terminator" you'll hear Vorder responding with "Waiting for order". The center of the microphone will turn red to indicate that your voice is now being recorded. A waveform will also show up at the center of the screen indicating your microphone levels.</li>
             <br></br>
             <span className="image fit"><img src="/static/images/vorder_listening.jpg" alt="" /></span>
-            <li>Order types available in Beta phase (only for BTC/USDT and ETH/USDT):
+            <li>While the microphone is red you can say your order. These are the order types available during the Beta phase (only for BTC/USDT and ETH/USDT):
+              <p></p>
               <ol>
-                <li> Simple Limit and Market orders.
+                <li><u>Limit and Market orders</u>
                   <ul>
                     <li>Syntax: <b>Buy/Sell [Quantity] [Coin] [Order Type] [Price]</b></li>
-                    <li>Example: "Buy 1.1 Bitcoin Market" or "Sell 3.56 Ether Limit 2450"</li>
+                    <li>Example: "Buy 1.1 Bitcoin Market" or "Sell 3.56 Ether Limit 5289". The first order buys 1.1 BTC at market price. The second order sells 3.56 ETH, with 5289 USDT as the limit price.</li>
                   </ul>
                 </li>
-                <li>Several limit orders of equal size, equally distributed between a range of prices.
+                <li><u>Several limit orders of equal size, equally distributed inside range</u>
                   <ul>
                     <li>Syntax: <b>Buy/Sell [Quantity] [Coin] Range [Number of Limit orders] Lowest [Lower Price] Highest [Higher Price]</b></li>
-                    <li>Example: "Buy 1 Bitcoin Range 5 Lowest 40,000 Highest 50,000", which will place 5 limit orders equally distributed between $40k and $50k. In this case, each order will have a quantity of 0.2BTC and the limit prices will be $40.0k, $42.5k, 45.0k, 47.5k, and 50.0k.</li>
+                    <li>Example: "Buy 1 Bitcoin Range 5 Lowest 40,000 Highest 50,000". This will place 5 limit orders equally distributed between 40k and 50k USDT. In this case, each order will have a quantity of 0.2 BTC and the limit prices will be 40.0k, 42.5k, 45.0k, 47.5k, and 50.0k USDT.</li>
                   </ul>
                 </li>
               </ol>
             </li>
-            <li>Your voice order will be sent for interpretation after one of the two happens:
+            <li>Your voice order will be sent for interpretation once one of the two happens:
               <ol>
-                <li>You stay silent for 2 seconds after having spoken.</li>
+                <li>You stay silent for 2 seconds after speaking.</li>
                 <li>The counter at the upper right corner reaches zero.</li>
               </ol>
             </li>
+            <li>Once your voice order has been interpreted, you'll hear Vorder asking you to confirm your order. Case your audio wasn't clear enough or there was something invalid with the order you'll get an error message.</li>
+            <br></br>
+            <li>To confirm, just say either "Yes" or "No". If you said yes and you heard 'Order placed', go check <a href="https://testnet.binancefuture.com/en/futures/BTCUSDT">Binance Futures Testnet</a> and your order will be there waiting for you :)</li>
+            <br></br>
+            <span className="image fit"><img src="/static/images/binance_future_order.jpg" alt="" /></span>
           </ul>
           <h3>Important notes</h3>
           <ul>
-            <li>foo</li>
-          </ul>
-          <h3>Answer survey</h3>
-          <ul>
-            <li>foo</li>
-          </ul>
-          <h3>Troubleshooting</h3>
-          <ul>
-            <li>foo</li>
+            <li>Vorder accepts several decimal places but Binance only accepts 2 for BTC and ETH, so if you use more than 2 decimal places the remaining ones will be truncated.</li>
+            <li>Currently, only 'Bitcoin' and 'Ether' words work for the coin names. If you say for instance "BTC" or "ETH" it won't work.</li>
+            <li>Noise, quality of the microphone, distance from microphone and accent matters. We're still working on the system's robustness.</li>
+            <li>According to our experiments, the voice recognition system generally works better using the microphone from a headset than using the built-in microphone from a laptop.</li>
+            <li>During the Beta phase we will record and save all the orders to serve as samples to train and improve the speech recognition algorithm. Just let us know if you don't want us to use your data.</li>
           </ul>
           <h3>Known issues</h3>
           <ul>
-            <li>Bluetooth headsets don't work well with Vorder. You'll find that the microphone records, but there won't be any sound. This seems to be a problem for every voice app running in the browser, not just Vorder.</li>
+            <li>There are issues with Bluetooth headsets. You'll find that the microphone records, but there won't be any sound. This seems to be a problem for every voice app running in the browser, not just Vorder.</li>
             <li>We've had reports that there are problems in Mac and iPhone but we still haven't tested in those systems.</li>
           </ul>
           {close}
