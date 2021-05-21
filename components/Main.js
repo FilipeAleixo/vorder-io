@@ -15,16 +15,14 @@ class Main extends React.Component {
 
         <article id="start" className={`${this.props.article === 'start' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Start Here</h2>
-          <span className="image main"><img src="/static/images/pic01.jpg" alt="" /></span>
-          <p>Vorder is a voice assistant that helps you place, cancel and manage hundreds of orders with one voice command. From dozens of clicks to one voice command will be all it takes for a crypto trader to trade more efficiently</p>
+          <span className="image main"><img src="/static/images/vorder_intro.png" alt="" /></span>
+          <p>Vorder is a voice assistant that helps you place, cancel and manage hundreds of orders with one voice command. We are currently in Beta phase. For more information on how to become a Beta tester <a href="#try">click here.</a></p>
           <h3>Smooth trading experience from anywhere</h3>
           <p>Place orders, check prices, and manage your portfolio whether you're on your desk, relaxing on the couch, or even while driving. Zero clicking or typing involved.</p>
           <h3>No more missed trading opportunities</h3>
           <p>Trade faster than ever before. Vorder allows you to focus on the charts and drastically reduces the time it takes you to place an order.</p>
           <h3>All in one place</h3>
           <p>Trading multiple coins and/or in multiple exchanges requires you to constantly switch tabs and manage multiple logins. With Vorder you can access everything from one single place.</p>
-          <br></br>
-          <p>We are currently in Beta phase. For more information on how to become a Beta tester <a href="#try">click here.</a></p>
           {close}
         </article>
 
@@ -90,10 +88,10 @@ class Main extends React.Component {
           <h3>Important notes</h3>
           <ul>
             <li>Vorder accepts several decimal places but Binance only accepts 2 for BTC and ETH, so if you use more than 2 decimal places the remaining ones will be truncated.</li>
-            <li>Currently, only 'Bitcoin' and 'Ether' words work for the coin names. If you say for instance "BTC" or "ETH" it won't work.</li>
-            <li>Noise, quality of the microphone, distance from microphone and accent matters. We're still working on the system's robustness.</li>
+            <li>Currently, only 'Bitcoin' and 'Ether' words work for the coin names. If you say, for instance, "BTC" or "ETH" it won't work.</li>
+            <li>Noise, quality of the microphone, distance from microphone, and accent matters. We're still working on the system's robustness.</li>
             <li>According to our experiments, the voice recognition system generally works better using the microphone from a headset than using the built-in microphone from a laptop.</li>
-            <li>During the Beta phase we will record and save all the orders to serve as samples to train and improve the speech recognition algorithm. Just let us know if you don't want us to use your data.</li>
+            <li>During the Beta phase we will record and save all the orders to serve as samples to train and improve the speech recognition algorithm. Let us know if you don't want us to use your data.</li>
           </ul>
           <h3>Known issues</h3>
           <ul>
