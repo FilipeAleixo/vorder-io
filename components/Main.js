@@ -16,7 +16,7 @@ class Main extends React.Component {
         <article id="start" className={`${this.props.article === 'start' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Start Here</h2>
           <span className="image main"><img src="/static/images/vorder_intro.png" alt="" /></span>
-          <p>Vorder is a voice assistant that helps you place, cancel and manage hundreds of orders with one voice command. We are currently in Beta phase. For more information on how to become a Beta tester <a href="#try">click here.</a></p>
+          <p>Vorder is a voice assistant that helps you place, cancel and manage hundreds of orders with one voice command. We are currently in Beta phase. For more information on how to become a Beta tester click <i>TRY VORDER</i> in the main menu.</p>
           <h3>Smooth trading experience from anywhere</h3>
           <p>Place orders, check prices, and manage your portfolio whether you're on your desk, relaxing on the couch, or even while driving. Zero clicking or typing involved.</p>
           <h3>No more missed trading opportunities</h3>
@@ -81,7 +81,7 @@ class Main extends React.Component {
             </li>
             <li>Once your voice order has been interpreted, you'll hear Vorder asking you to confirm your order. Case your audio wasn't clear enough or there was something invalid with the order you'll get an error message.</li>
             <br></br>
-            <li>To confirm, just say either "Yes" or "No". If you said yes and you heard 'Order placed', go check <a href="https://testnet.binancefuture.com/en/futures/BTCUSDT">Binance Futures Testnet</a> and your order will be there waiting for you :)</li>
+            <li>To confirm, just say either "Yes" or "No". If you said yes and you heard "Order placed", go check <a href="https://testnet.binancefuture.com/en/futures/BTCUSDT">Binance Futures Testnet</a> and your order will be there waiting for you :)</li>
             <br></br>
             <span className="image fit"><img src="/static/images/binance_future_order.jpg" alt="" /></span>
           </ul>

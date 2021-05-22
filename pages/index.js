@@ -1,5 +1,5 @@
 import Head from "next/head"
-import stylesheet from 'styles/main.scss'
+import stylesheet from '../styles/main.scss'
 
 import Header from "../components/Header"
 import Main from "../components/Main"
@@ -17,6 +17,7 @@ class IndexPage extends React.Component {
         }
         this.handleOpenArticle = this.handleOpenArticle.bind(this)
         this.handleCloseArticle = this.handleCloseArticle.bind(this)
+        this.handleLinkArticle = this.handleCloseArticle.bind(this)
     }
 
     componentDidMount() {
@@ -68,6 +69,7 @@ class IndexPage extends React.Component {
             })
         }, 350)
     }
+
     render() {
         return (
             <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? "is-article-visible" : ""}`}>
