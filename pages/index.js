@@ -1,9 +1,11 @@
-import Head from "next/head"
-import stylesheet from '../styles/main.scss'
+import Head from "next/head";
+import stylesheet from '../styles/main.scss';
 
-import Header from "../components/Header"
-import Main from "../components/Main"
-import Footer from "../components/Footer"
+import Header from "../components/Header";
+import Main from "../components/Main";
+import Footer from "../components/Footer";
+
+import { API } from 'aws-amplify';
 
 class IndexPage extends React.Component {
     constructor(props) {
@@ -70,6 +72,26 @@ class IndexPage extends React.Component {
         }, 350)
     }
 
+
+    async handleSubmitContactForm(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        const data = { 
+            body:
+                {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    message: formData.get('message')
+                }
+
+        }
+
+        console.log(data);
+        const apiData = await API.post('https://t2gq3bxur0.execute-api.us-east-1.amazonaws.com', '/default', data);
+        console.log({ apiData });
+    }
+
     render() {
         return (
             <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? "is-article-visible" : ""}`}>
@@ -89,6 +111,7 @@ class IndexPage extends React.Component {
                             articleTimeout={this.state.articleTimeout}
                             article={this.state.article}
                             onCloseArticle={this.handleCloseArticle}
+                            onSubmitContactForm={this.handleSubmitContactForm}
                         />
                         <Footer timeout={this.state.timeout} />
                     </div>
