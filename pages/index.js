@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 import Amplify from "aws-amplify";
 import awsExports from "../aws-exports";
-Amplify.configure({ ...awsExports, ssr: true });
+Amplify.configure({ ...awsExports});
 
 class IndexPage extends React.Component {
     constructor(props) {
