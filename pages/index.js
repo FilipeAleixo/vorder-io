@@ -90,9 +90,14 @@ class IndexPage extends React.Component {
 
         }
 
-        console.log(data);
         const apiData = await API.post('formapi', '/contact', data);
-        console.log({ apiData });
+        
+        if (apiData.status) {
+            alert("Your message has been sent. Thank you.")
+        }
+        else {
+            alert("There's been an error sending your message.")
+        }
     }
 
     render() {

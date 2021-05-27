@@ -39,16 +39,16 @@ app.post('/contact', async function(req, res) {
     Source: "admin@vorder.io",
   };
 
-  const sendPromise = new ses.sendEmail(params).promise();
+  try {
 
-  // Handle promise's fulfilled/rejected states
-  sendPromise.then(
-    function(data) {
-      res.json({status: true, message: data.MessageId})
-  }).catch(
-    function(err) {
-      res.json({status: false, message: err})
-  });
+    const sesResponse = await ses.sendEmail(params).promise();
+    res.json({status: true})
+  }
+  catch {
+    res.json({status: false})
+  }
+
+  
 });
 
 

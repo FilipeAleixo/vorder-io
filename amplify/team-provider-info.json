@@ -15,7 +15,7 @@
       "function": {
         "vorderiocontactmail": {
           "deploymentBucketName": "amplify-amplify6b42cadb9b794-staging-183342-deployment",
-          "s3Key": "amplify-builds/vorderiocontactmail-64493450534841754e78-build.zip"
+          "s3Key": "amplify-builds/vorderiocontactmail-4b526b7439616a4a5341-build.zip"
         }
       }
     }
