@@ -10,6 +10,14 @@
       "StackName": "amplify-amplify6b42cadb9b794-staging-183342",
       "StackId": "arn:aws:cloudformation:us-east-1:828009597444:stack/amplify-amplify6b42cadb9b794-staging-183342/10440440-bf1a-11eb-81fb-0ab0f473fdd5",
       "AmplifyAppId": "d1id313lj9b0nw"
+    },
+    "categories": {
+      "function": {
+        "vorderiocontactmail": {
+          "deploymentBucketName": "amplify-amplify6b42cadb9b794-staging-183342-deployment",
+          "s3Key": "amplify-builds/vorderiocontactmail-64493450534841754e78-build.zip"
+        }
+      }
     }
   }
 }

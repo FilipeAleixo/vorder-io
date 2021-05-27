@@ -6,6 +6,7 @@ import Main from "../components/Main";
 import Footer from "../components/Footer";
 
 import Amplify from "aws-amplify";
+import { API } from 'aws-amplify';
 import awsExports from "../aws-exports";
 Amplify.configure({ ...awsExports});
 
@@ -90,7 +91,7 @@ class IndexPage extends React.Component {
         }
 
         console.log(data);
-        const apiData = await API.post('https://t2gq3bxur0.execute-api.us-east-1.amazonaws.com', '/default', data);
+        const apiData = await API.post('formapi', '/contact', data);
         console.log({ apiData });
     }
 
