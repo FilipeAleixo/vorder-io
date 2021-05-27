@@ -130,7 +130,7 @@ class Main extends React.Component {
           </form>
           <ul className="icons">
             <li><a href="#">
-              <FontAwesomeIcon icon={faTwitter} transform="shrink-7"/>
+              <FontAwesomeIcon icon={faTwitter}/>
             </a></li>
           </ul>
           {close}
