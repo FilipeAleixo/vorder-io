@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-amplify/ui-react": "^1.2.1",
     "@babel/core": "^7.14.2",
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-brands": "^5.0.10",
@@ -20,7 +21,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "autoprefixer": "^9.1.5",
-    "aws-amplify": "^4.0.2",
+    "aws-amplify": "^4.0.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-wrap-in-js": "^1.1.1",
