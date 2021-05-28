@@ -5,10 +5,7 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 
-import Amplify from "aws-amplify";
-import { API } from 'aws-amplify';
-import awsExports from "../aws-exports";
-Amplify.configure({ ...awsExports});
+import '../configureAmplify'
 
 class IndexPage extends React.Component {
     constructor(props) {
@@ -91,7 +88,7 @@ class IndexPage extends React.Component {
         }
 
         const apiData = await API.post('formapi', '/contact', data);
-        
+
         if (apiData.status) {
             alert("Your message has been sent. Thank you.")
         }

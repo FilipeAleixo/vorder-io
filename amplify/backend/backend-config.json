@@ -21,5 +21,13 @@
         }
       ]
     }
+  },
+  "auth": {
+    "vorderio3fe6b080": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
   }
 }
