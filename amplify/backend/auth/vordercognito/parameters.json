@@ -1,12 +1,12 @@
 {
-    "identityPoolName": "vorderio3fe6b080_identitypool_3fe6b080",
+    "identityPoolName": "vorder_identitypool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "vorder3fe6b080",
-    "userPoolName": "vorderio3fe6b080_userpool_3fe6b080",
+    "resourceNameTruncated": "vorderef0fb558",
+    "userPoolName": "vorder_dev",
     "autoVerifiedAttributes": [
         "email"
     ],
-    "mfaConfiguration": "OFF",
+    "mfaConfiguration": "OPTIONAL",
     "mfaTypes": [
         "SMS Text Message"
     ],
@@ -21,17 +21,18 @@
         "email"
     ],
     "userpoolClientGenerateSecret": false,
-    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientRefreshTokenValidity": "1",
     "userpoolClientWriteAttributes": [
         "email"
     ],
     "userpoolClientReadAttributes": [
-        "email"
+        "email",
+        "email_verified"
     ],
-    "userpoolClientLambdaRole": "vorder3fe6b080_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
-    "sharedId": "3fe6b080",
-    "resourceName": "vorderio3fe6b080",
+    "userpoolClientLambdaRole": "vorderef0fb558_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": true,
+    "sharedId": "ef0fb558",
+    "resourceName": "vordercognito",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -45,12 +46,19 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
-    "usernameAttributes": [
-        "email"
-    ],
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": "{}",
+    "hostedUI": false,
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "breakCircularDependency": true,
+    "permissions": [],
     "dependsOn": []
 }

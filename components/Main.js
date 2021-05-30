@@ -4,6 +4,9 @@ import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
 import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook';
 import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram';
 import faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
+import { useState, useEffect } from 'react'
+import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
+import { AmplifyAuthenticator, AmplifyAuthContainer, AmplifySignUp, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';
 
 class Main extends React.Component {
   render() {
@@ -135,7 +138,6 @@ class Main extends React.Component {
           </ul>
           {close}
         </article>
-
       </div>
     )
   }

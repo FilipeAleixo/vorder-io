@@ -1,12 +1,24 @@
 import PropTypes from 'prop-types';
+import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import faMicrophone from '@fortawesome/fontawesome-free-solid/faMicrophone';
 
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
+        <div className="auth">
+            <nav>
+                <ul>
+                    <li>
+                        <Link href="/auth">
+                            <a>Go To App</a>
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <div className="logo">
             {/*<span className="icon fa-microphone"></span>*/}
-            <FontAwesomeIcon icon={faMicrophone} transform="grow-23" />
+            <FontAwesomeIcon icon={faMicrophone} transform="grow-16" />
         </div>
         <div className="content">
             <div className="inner">
