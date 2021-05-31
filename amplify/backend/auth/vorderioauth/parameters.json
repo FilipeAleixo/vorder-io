@@ -1,18 +1,18 @@
 {
-    "identityPoolName": "vorder_identitypool",
+    "identityPoolName": "vorderio_auth",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "vorderef0fb558",
-    "userPoolName": "vorder_dev",
+    "resourceNameTruncated": "vorder1446e6e1",
+    "userPoolName": "vorderio_auth",
     "autoVerifiedAttributes": [
         "email"
     ],
-    "mfaConfiguration": "OPTIONAL",
+    "mfaConfiguration": "OFF",
     "mfaTypes": [
         "SMS Text Message"
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your verification code",
+    "emailVerificationSubject": "[Vorder.io] - Verification Code",
     "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
@@ -29,10 +29,10 @@
         "email",
         "email_verified"
     ],
-    "userpoolClientLambdaRole": "vorderef0fb558_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "vorder1446e6e1_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": true,
-    "sharedId": "ef0fb558",
-    "resourceName": "vordercognito",
+    "sharedId": "1446e6e1",
+    "resourceName": "vorderioauth",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -48,6 +48,9 @@
     },
     "useDefault": "manual",
     "thirdPartyAuth": false,
+    "usernameAttributes": [
+        "email"
+    ],
     "userPoolGroups": false,
     "adminQueries": false,
     "triggers": "{}",

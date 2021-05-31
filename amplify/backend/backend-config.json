@@ -23,7 +23,7 @@
     }
   },
   "auth": {
-    "vordercognito": {
+    "vorderioauth": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

@@ -1,25 +1,49 @@
 {
-  "staging": {
+  "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplify6b42cadb9b794-staging-183342-authRole",
-      "UnauthRoleArn": "arn:aws:iam::828009597444:role/amplify-amplify6b42cadb9b794-staging-183342-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::828009597444:role/amplify-amplify6b42cadb9b794-staging-183342-authRole",
+      "AuthRoleName": "amplify-vorderio-dev-141053-authRole",
+      "UnauthRoleArn": "arn:aws:iam::828009597444:role/amplify-vorderio-dev-141053-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::828009597444:role/amplify-vorderio-dev-141053-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-amplify6b42cadb9b794-staging-183342-deployment",
-      "UnauthRoleName": "amplify-amplify6b42cadb9b794-staging-183342-unauthRole",
-      "StackName": "amplify-amplify6b42cadb9b794-staging-183342",
-      "StackId": "arn:aws:cloudformation:us-east-1:828009597444:stack/amplify-amplify6b42cadb9b794-staging-183342/10440440-bf1a-11eb-81fb-0ab0f473fdd5",
+      "DeploymentBucketName": "amplify-vorderio-dev-141053-deployment",
+      "UnauthRoleName": "amplify-vorderio-dev-141053-unauthRole",
+      "StackName": "amplify-vorderio-dev-141053",
+      "StackId": "arn:aws:cloudformation:us-east-1:828009597444:stack/amplify-vorderio-dev-141053/a5ba1380-c211-11eb-ae91-0a6329bdd2f1",
       "AmplifyAppId": "d1id313lj9b0nw"
     },
     "categories": {
       "function": {
         "vorderiocontactmail": {
-          "deploymentBucketName": "amplify-amplify6b42cadb9b794-staging-183342-deployment",
+          "deploymentBucketName": "amplify-vorderio-dev-141053-deployment",
           "s3Key": "amplify-builds/vorderiocontactmail-73586c64536b4b556933-build.zip"
         }
       },
       "auth": {
-        "vordercognito": {}
+        "vorderioauth": {}
+      }
+    }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vorderio-prod-141612-authRole",
+      "UnauthRoleArn": "arn:aws:iam::828009597444:role/amplify-vorderio-prod-141612-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::828009597444:role/amplify-vorderio-prod-141612-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-vorderio-prod-141612-deployment",
+      "UnauthRoleName": "amplify-vorderio-prod-141612-unauthRole",
+      "StackName": "amplify-vorderio-prod-141612",
+      "StackId": "arn:aws:cloudformation:us-east-1:828009597444:stack/amplify-vorderio-prod-141612/60f01a00-c212-11eb-8cc9-0e72af45bdc7",
+      "AmplifyAppId": "d1id313lj9b0nw"
+    },
+    "categories": {
+      "function": {
+        "vorderiocontactmail": {
+          "deploymentBucketName": "amplify-vorderio-prod-141612-deployment",
+          "s3Key": "amplify-builds/vorderiocontactmail-73586c64536b4b556933-build.zip"
+        }
+      },
+      "auth": {
+        "vorderioauth": {}
       }
     }
   }

@@ -6,14 +6,14 @@ const awsmobile = {
     "aws_cloud_logic_custom": [
         {
             "name": "formapi",
-            "endpoint": "https://ttvmjvxqy6.execute-api.us-east-1.amazonaws.com/staging",
+            "endpoint": "https://x7osnmafc4.execute-api.us-east-1.amazonaws.com/dev",
             "region": "us-east-1"
         }
     ],
-    "aws_cognito_identity_pool_id": "us-east-1:f4db7668-3f00-4aec-8a75-6b97000c0baf",
+    "aws_cognito_identity_pool_id": "us-east-1:6300aab3-f4ed-402f-b9ba-cbfa73164d4e",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_CFAxNcr7P",
-    "aws_user_pools_web_client_id": "4j4pcr1brpi92nuq61q3a2oc1r",
+    "aws_user_pools_id": "us-east-1_wKO7h3kGU",
+    "aws_user_pools_web_client_id": "6le36scgu1ko22p6hgpvm08p8u",
     "oauth": {}
 };
 
