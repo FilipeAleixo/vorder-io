@@ -106,7 +106,6 @@ class Main extends React.Component {
 
         <article id="about" className={`${this.props.article === 'about' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">About Us</h2>
-          <span className="image main"><img src="/static/images/pic03.jpg" alt="" /></span>
           <p>We are a team of two - Gonçalo and Filipe. We trade crypto since 2017 and want to build something to be part of the revolution.</p>
           <p>Filipe is the more technical guy from the two of us, so if Vorder is not working properly he’s the one to yell at. He loves cats and hates unnecessary bureaucracy.</p>
           <p>I’m more the techy enthusiast entrepreneur guy who deals with the non-technical part of Vorder. In my “real life”, outside of crypto and Twitter, I help companies in the innovation process and work with startups.</p>
