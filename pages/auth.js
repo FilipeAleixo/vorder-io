@@ -1,4 +1,5 @@
-import '../styles/globals.css'
+import '../styles/global.scss'
+
 import { useState, useEffect } from 'react'
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import { AmplifyAuthenticator, AmplifyAuthContainer, AmplifySignUp, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';
@@ -32,13 +33,13 @@ const Auth = (props) => {
                 type: "email",
                 label: "Email Address *",
                 placeholder: "Enter your email address",
-                inputProps: { required: true, autocomplete: "username" },
+                inputProps: { required: true },
               },
               {
                 type: "password",
                 label: "Password *",
                 placeholder: "Enter your password",
-                inputProps: { required: true, autocomplete: "new-password" },
+                inputProps: { required: true },
               },
             ]} 
           />

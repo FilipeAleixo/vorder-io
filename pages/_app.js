@@ -1,7 +1,7 @@
 import '../configureAmplify'
 
-const VorderIOApp = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
 }
 
-export default VorderIOApp;
+export default App;
