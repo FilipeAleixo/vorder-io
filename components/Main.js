@@ -106,8 +106,27 @@ class Main extends React.Component {
 
         <article id="about" className={`${this.props.article === 'about' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">About Us</h2>
-          <span className="image main"><img src="/static/images/pic03.jpg" alt="" /></span>
-          <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+          <p>We are a team of two - Gonçalo and Filipe. We trade crypto since 2017 and want to build something to be part of the revolution.</p>
+          <p>Filipe is the more technical guy from the two of us, so if Vorder is not working properly he’s the one to yell at. He loves cats and hates unnecessary bureaucracy.</p>
+          <p>I’m more the techy enthusiast entrepreneur guy who deals with the non-technical part of Vorder. In my “real life”, outside of crypto and Twitter, I help companies in the innovation process and work with startups.</p>
+          
+          <h3>How Vorder came to be</h3> 
+          <p>One day I (Gonçalo) was laying in my bed, thinking "I should place some orders" but feeling profoundly lazy to do that for 10+ different coins. Opening 10+ different web pages, too many clicks, so much time lost placing 2, 3, 4 orders per coin.</p>
+          <p>Imagine sitting comfortably on your couch, looking at the BTC chart on your mobile or PC and saying "Vorder Buy 1 BTC limit 45,000 with a market stop 1% below current price" and boom, orders instantly placed.</p>
+          <p>Imagine crypto markets in one of those crazy days, where you're stressed as hell giving your best effort to manage your portfolio. Sell some altcoins, buy the dip. You know you're gonna miss some trades. Or maybe not, because you can say "Vorder Buy 10,000 Dollars ETH LINK ATOM DOT" and it instantly buys 10,000 USD equally distributed between those 4 altcoins (2500 USD each).</p>
+ 
+          <p>And, in a near future, imagine driving and asking:</p>
+            <ul>
+            <li>"Vorder, what's the price of Bitcoin?"</li>
+            <li>"The price of Bitcoin is 76,147 USD" she says.</li>
+            <li>"Vorder is BTC price above the 4hours 200MA?"</li>
+            <li>"No"</li>
+            <li>"Vorder Sell 1 BTC market"</li>
+            <li>"Order placed"</li>
+          </ul>
+
+          <p>So, I told Filipe about this idea of having a voice assistant tool to trade crypto and here we are.</p>
+
           {close}
         </article>
 
