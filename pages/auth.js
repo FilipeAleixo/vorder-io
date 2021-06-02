@@ -1,5 +1,3 @@
-import '../styles/global.scss'
-
 import { useState, useEffect } from 'react'
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import { AmplifyAuthenticator, AmplifyAuthContainer, AmplifySignUp, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';
@@ -24,7 +22,12 @@ const Auth = (props) => {
 
   return (
     <AmplifyAuthContainer>
-        <AmplifyAuthenticator usernameAlias="email">
+        <AmplifyAuthenticator usernameAlias="email"
+          style={{
+            '--amplify-font-family': "'Source Sans Pro', 'sans-serif'",
+            '--amplify-primary-color': '#000000',
+          }}
+        >
           <AmplifySignUp
             slot="sign-up"
             usernameAlias="email"
