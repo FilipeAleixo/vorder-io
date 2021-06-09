@@ -16,7 +16,7 @@ const Auth = (props) => {
   }, []);
 
   if (authState === AuthState.SignedIn && user) {
-    Router.push('https://app.vorder.io')
+    Router.push('/app')
     return <p>Redirecting...</p>
   }
 

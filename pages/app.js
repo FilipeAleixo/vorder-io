@@ -1,8 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
+import Router from 'next/router'
 
-const VorderApp = (props) => {
-
+const VorderApp = ({ authenticated, username }) => {
+  if (!authenticated) {
+    Router.push('/auth')
+    return <h1>Not authenticated</h1>
+  }
   return (
     <div>
       <Head>
@@ -49,10 +53,27 @@ const VorderApp = (props) => {
       <script src="/static/js/porcupine/porcupine_manager.js"></script>
 
     </div>
-
-
-
   );
+
+}
+
+export async function getServerSideProps(context) {
+  const { Auth } = withSSRContext(context)
+  try {
+    const user = await Auth.currentAuthenticatedUser()
+    console.log('user: ', user)
+    return {
+      props: {
+        authenticated: true, username: user.username
+      }
+    }
+  } catch (err) {
+    return {
+      props: {
+        authenticated: false
+      }
+    }
+  }
 }
 
 export default VorderApp;
