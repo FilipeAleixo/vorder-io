@@ -136,15 +136,11 @@ body {
 #waveform {
   height:30%;
   width: 50%;
-  position: relative;
-  left: 0;
-  top: 35%;
-  margin: 0 auto;
+  position: absolute;
+  left: 25%;
+  top: 30%;
   display: none;
-  cursor: pointer;
   opacity: 1;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
 /* Loading */

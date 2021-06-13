@@ -19,7 +19,14 @@ var Vorder = function(options) {
   this.recorder = null;
   this.speechEvents = null;
   this.orderAudio=null;
-  this.socketio = io("wss://app-dev.vorder.io");
+  this.socketio = io("wss://app-dev.vorder.io", 
+    {
+      query: 
+      { 
+        username: window.cognitoSignInData.username,
+        idToken: window.cognitoSignInData.idToken 
+      }
+    });
   this.wakeKeywords = { "Terminator": new Uint8Array([
               0x49, 0x66, 0x6d, 0xcb, 0x89, 0xfe, 0xba, 0x1c, 0xfb, 0x55, 0x67, 0x12,
               0xf7, 0x52, 0x0d, 0x90, 0xbb, 0x4c, 0x06, 0x54, 0xae, 0xf4, 0x62, 0xf2,
@@ -891,8 +898,10 @@ Vorder.prototype = {
    * Start monitoring
    */
   start: function() {
+
     var self = this;
     
+    // debug siriwave
     //self.showRecording();
     //runSiriWave();
 
@@ -1381,8 +1390,8 @@ Vorder.prototype = {
 };
 
 // Setup our new vorder class and pass it the initial options
-var vorder = new Vorder({porcupineWorkerPath: 'static/porcupine/porcupine_worker.js',
-                         downSamplingWorkerPath: 'static/porcupine/downsampling_worker.js',
+var vorder = new Vorder({porcupineWorkerPath: 'static/js/porcupine/porcupine_worker.js',
+                         downSamplingWorkerPath: 'static/js/porcupine/downsampling_worker.js',
                          orderProcessing: {waitStartRecordingSeconds: 0.25, maxRecordingSeconds: 15, maxSilenceSecondsAfterSpeech: 1.0},
                          orderConfirmation: {waitStartRecordingSeconds: 0.25, maxRecordingSeconds: 5, maxSilenceSecondsAfterSpeech: 0.5},
                           //samplingRate: 32000

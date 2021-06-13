@@ -1,8 +1,28 @@
 import React from 'react';
 import Head from 'next/head';
 import Router from 'next/router'
+import { withSSRContext } from "aws-amplify";
+import { useState, useEffect } from 'react'
 
-const VorderApp = ({ authenticated, username }) => {
+const VorderApp = ({ authenticated, username, idToken }) => {
+
+  const loadScript = url => new Promise(resolve => {
+    const tag = document.createElement('script');
+    tag.async = false;
+    tag.src = url;
+    const body = document.body;
+    body.appendChild(tag);
+    tag.addEventListener('load', resolve, {
+      once: true
+    });
+  });
+
+  useEffect(() => {
+    {/* Loading vorder.js script this way because I need the `idToken` variable to be already set once the script loads */}
+    window.cognitoSignInData = { username: username, idToken: idToken };
+    loadScript("/static/js/vorder.js");
+  }, []);
+
   if (!authenticated) {
     Router.push('/auth')
     return <h1>Not authenticated</h1>
@@ -12,11 +32,6 @@ const VorderApp = ({ authenticated, username }) => {
       <Head>
         <title>Vorder: Trading Crypto with Voice</title>
         <link href="/static/css/voiceapp.css" rel="stylesheet" />
-        <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io-stream/0.9.1/socket.io-stream.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/kopiro/siriwave/dist/siriwave.umd.js"></script>
       </Head>
 
       {/* Top Info */}
@@ -47,8 +62,12 @@ const VorderApp = ({ authenticated, username }) => {
         <div id="barEmpty" className="bar"></div>
         <div id="sliderBtn"></div>
       </div>
-
-      <script src="/static/js/vorder.js"></script>
+      
+      <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io-stream/0.9.1/socket.io-stream.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/kopiro/siriwave/dist/siriwave.umd.js"></script>
       <script src="/static/js/porcupine/web_voice_processor.js"></script>
       <script src="/static/js/porcupine/porcupine_manager.js"></script>
 
@@ -61,10 +80,10 @@ export async function getServerSideProps(context) {
   const { Auth } = withSSRContext(context)
   try {
     const user = await Auth.currentAuthenticatedUser()
-    console.log('user: ', user)
+    console.log(JSON.stringify(user, null, 4))
     return {
       props: {
-        authenticated: true, username: user.username
+        authenticated: true, username: user.username, idToken: user.signInUserSession.idToken.jwtToken
       }
     }
   } catch (err) {
