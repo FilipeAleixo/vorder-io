@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import Router from 'next/router'
+import Router from 'next/router';
 import { withSSRContext } from "aws-amplify";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 const VorderApp = ({ authenticated, username, idToken }) => {
 
@@ -18,15 +18,29 @@ const VorderApp = ({ authenticated, username, idToken }) => {
   });
 
   useEffect(() => {
-    {/* Loading vorder.js script this way because I need the `idToken` variable to be already set once the script loads */}
+    if (!authenticated) {
+      Router.push('/auth')
+      return;
+    }
+    {/* Loading all dependencies before vorder.js gets loaded.
+    Also, loading this way because it's loading after everything in the page has been loaded, 
+    since for the vorder.js script I need the `idToken` variable to be already set once the script loads */}
     window.cognitoSignInData = { username: username, idToken: idToken };
-    loadScript("/static/js/vorder.js");
+    Promise.all([
+      loadScript("https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"),
+      loadScript("https://www.WebRTC-Experiment.com/RecordRTC.js"),
+      loadScript("https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"),
+      loadScript("https://cdn.jsdelivr.net/gh/kopiro/siriwave/dist/siriwave.umd.js"),
+      loadScript("/static/js/porcupine/web_voice_processor.js"),
+      loadScript("/static/js/porcupine/porcupine_manager.js")
+      ])
+    .then(loadScript("/static/js/vorder.js"))
   }, []);
 
   if (!authenticated) {
-    Router.push('/auth')
-    return <h1>Not authenticated</h1>
+    return null;
   }
+
   return (
     <div>
       <Head>
@@ -62,14 +76,6 @@ const VorderApp = ({ authenticated, username, idToken }) => {
         <div id="barEmpty" className="bar"></div>
         <div id="sliderBtn"></div>
       </div>
-      
-      <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io-stream/0.9.1/socket.io-stream.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/kopiro/siriwave/dist/siriwave.umd.js"></script>
-      <script src="/static/js/porcupine/web_voice_processor.js"></script>
-      <script src="/static/js/porcupine/porcupine_manager.js"></script>
 
     </div>
   );
@@ -80,7 +86,7 @@ export async function getServerSideProps(context) {
   const { Auth } = withSSRContext(context)
   try {
     const user = await Auth.currentAuthenticatedUser()
-    console.log(JSON.stringify(user, null, 4))
+    //console.log(JSON.stringify(user, null, 4))
     return {
       props: {
         authenticated: true, username: user.username, idToken: user.signInUserSession.idToken.jwtToken
