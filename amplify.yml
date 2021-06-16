@@ -6,9 +6,8 @@ frontend:
         - npm ci
     build:
       commands:
+        - AWS_BRANCH = ${AWS_BRANCH}
         - npm run build
-        - if [ "${AWS_BRANCH}" = "master" ]; then echo "-------> master branch"; fi
-        - if [ "${AWS_BRANCH}" = "dev" ]; then echo "-----------> dev branch"; fi
   artifacts:
     baseDirectory: .next
     files:
