@@ -1,0 +1,49 @@
+.logout {
+	position:  absolute;
+	width: 7%;
+	right: 46.5%;
+	top: 2%;
+}
+.api-key-verified {
+	width: 25%;
+	margin: 0 auto;
+	font-family: Source Sans Pro, sans-serif;
+}
+.set-api-key-form p {
+	text-align: center;
+	font-family: Source Sans Pro, sans-serif;
+}
+.set-api-key-form {
+	position:  absolute;
+	width: 20%;
+	left:  40%;
+  	top: 20%;
+	margin: 0 auto;
+	font-family: Source Sans Pro, sans-serif;
+}
+.set-api-key-form h1 {
+	text-align: center;
+	color: #4d4d4d;
+	font-size: 24px;
+	padding: 20px 0 20px 0;
+	font-family: Source Sans Pro, sans-serif;
+}
+.set-api-key-form input[type="password"],
+.set-api-key-form input[type="text"] {
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #dddddd;
+	margin-bottom: 15px;
+	box-sizing:border-box;
+}
+.set-api-key-form input[type="submit"] {
+	width: 100%;
+	padding: 15px;
+	background-color: #000000;
+	border: 0;
+	box-sizing: border-box;
+	cursor: pointer;
+	font-weight: bold;
+	color: #ffffff;
+	font-family: Source Sans Pro, sans-serif;
+}

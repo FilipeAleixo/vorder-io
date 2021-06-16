@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - if [ "${AWS_BRANCH}" = "master" ]; then echo "NEXT_PUBLIC_BACKEND_ENDPOINT=dev.vorder.io" > .env.local; else echo "NEXT_PUBLIC_BACKEND_ENDPOINT=app-dev.vorder.io" > .env.local; fi
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

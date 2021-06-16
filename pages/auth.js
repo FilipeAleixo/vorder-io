@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
-import { AmplifyAuthenticator, AmplifyAuthContainer, AmplifySignUp, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';
+import { AmplifyAuthenticator, AmplifyAuthContainer, AmplifySignUp, AmplifySignIn } from '@aws-amplify/ui-react';
 import Router from 'next/router'
 
 const Auth = (props) => {
@@ -16,7 +16,7 @@ const Auth = (props) => {
   }, []);
 
   if (authState === AuthState.SignedIn && user) {
-    Router.push('https://app.vorder.io')
+    Router.push('/app')
     return <p>Redirecting...</p>
   }
 
