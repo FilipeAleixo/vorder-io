@@ -17,9 +17,11 @@ const VorderApp = ({ authenticated, username, idToken }) => {
     });
   });
 
-  console.log(`-------> ${process.env.backendEndpoint}` )
+  const endpt = process.env.backendEndpoint;
 
   useEffect(() => {
+
+    alert(endpt);
 
     if (!authenticated) {
       Router.push('/auth')
