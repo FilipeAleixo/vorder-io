@@ -17,7 +17,7 @@ const VorderApp = ({ authenticated, username, idToken }) => {
     });
   });
 
-  const endpt = process.env.backendEndpoint;
+  const endpt = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT;
 
   useEffect(() => {
 
