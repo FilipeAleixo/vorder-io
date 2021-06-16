@@ -11,8 +11,8 @@ const optionsEndpoint = 'https://app-dev.vorder.io/options';
 const Options = ({ authenticated, username, idToken }) => {
 
   const [keyStatus, setKeyStatus] = useState('');
-  const [logout, setLogout] = useState(false); 
   const [formSubmitStatus, setFormSubmitStatus] = useState('');
+  const [logout, setLogout] = useState(false); 
 
   const getAPIKeyStatus = () => {
     var userAPIKeyStatusTxt;
@@ -37,7 +37,7 @@ const Options = ({ authenticated, username, idToken }) => {
     //console.log(username);
     //console.log(idToken);
 
-    // Axios takes first the data object and then the headers
+    // Axios takes first the data object, and then the headers object
     axios.post(optionsEndpoint,
       {
           apiKey: event.target.apiKey.value,
