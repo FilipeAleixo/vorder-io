@@ -19,8 +19,6 @@ const VorderApp = ({ authenticated, username, idToken }) => {
 
   useEffect(() => {
 
-    alert(process.env.NEXT_PUBLIC_BACKEND_ENDPOINT);
-
     if (!authenticated) {
       Router.push('/auth')
       return;
@@ -29,6 +27,7 @@ const VorderApp = ({ authenticated, username, idToken }) => {
     Also, loading this way because it's loading after everything in the page has been loaded, 
     since for the vorder.js script I need the `idToken` variable to be already set once the script loads */}
     window.cognitoSignInData = { username: username, idToken: idToken };
+    window.backendEndpoint = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT;
     Promise.all([
       loadScript("https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"),
       loadScript("https://www.WebRTC-Experiment.com/RecordRTC.js"),

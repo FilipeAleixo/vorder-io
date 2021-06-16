@@ -6,7 +6,7 @@ import { withSSRContext } from "aws-amplify";
 import { AmplifyAuthContainer, AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { useState, useEffect } from 'react'
 
-const optionsEndpoint = 'https://app-dev.vorder.io/options';
+const optionsEndpoint = `https://${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/options`;
 
 const Options = ({ authenticated, username, idToken }) => {
 

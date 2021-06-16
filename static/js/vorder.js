@@ -19,7 +19,7 @@ var Vorder = function(options) {
   this.recorder = null;
   this.speechEvents = null;
   this.orderAudio=null;
-  this.socketio = io("wss://app-dev.vorder.io", 
+  this.socketio = io(`wss://${window.backendEndpoint}`, 
     {
       query: 
       { 
