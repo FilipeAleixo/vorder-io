@@ -1,7 +1,19 @@
 const path = require('path')
 const glob = require('glob')
 
+var backendEndpoint;
+
+if (process.env.AWS_BRANCH == "master") {
+  backendEndpoint = "app.vorder.io"
+}
+else if (process.env.AWS_BRANCH == "master") {
+  backendEndpoint = "app-dev.vorder.io" 
+}
+
 module.exports = {
+  env: {
+    backendEndpoint: backendEndpoint,
+  },
   webpack: (config, { dev }) => {
     config.module.rules.push(
       {
