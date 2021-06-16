@@ -12,13 +12,8 @@ else if (process.env.AWS_BRANCH == "master") {
 }
 */
 
-console.log(`---------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> ${process.env.NEXT_PUBLIC_AWS_BRANCH}`)
-
 // to send env variables to the browser, the prefix must be "NEXT_PUBLIC_", as per https://nextjs.org/docs/basic-features/environment-variables
 module.exports = {
-  env: {
-    NEXT_PUBLIC_BACKEND_ENDPOINT: backendEndpoint,
-  },
   webpack: (config, { dev }) => {
     config.module.rules.push(
       {
