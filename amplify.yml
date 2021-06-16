@@ -6,8 +6,8 @@ frontend:
         - npm ci
     build:
       commands:
-        - AWS_BRANCH = ${AWS_BRANCH}
         - npm run build
+        - AWS_BRANCH=${AWS_BRANCH}
   artifacts:
     baseDirectory: .next
     files:
