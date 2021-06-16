@@ -6,7 +6,7 @@ frontend:
         - npm ci
     build:
       commands:
-        - if [ "${AWS_BRANCH}" = "master" ]; then echo "NEXT_PUBLIC_AWS_BRANCH=dev.vorder.io" > .env.local; else echo "NEXT_PUBLIC_AWS_BRANCH=app-dev.vorder.io" > .env.local; fi
+        - if [ "${AWS_BRANCH}" = "master" ]; then echo "NEXT_PUBLIC_BACKEND_ENDPOINT=dev.vorder.io" > .env.local; else echo "NEXT_PUBLIC_BACKEND_ENDPOINT=app-dev.vorder.io" > .env.local; fi
         - npm run build
   artifacts:
     baseDirectory: .next

@@ -17,11 +17,9 @@ const VorderApp = ({ authenticated, username, idToken }) => {
     });
   });
 
-  const endpt = process.env.NEXT_PUBLIC_AWS_BRANCH;
-
   useEffect(() => {
 
-    alert(endpt);
+    alert(process.env.NEXT_PUBLIC_BACKEND_ENDPOINT);
 
     if (!authenticated) {
       Router.push('/auth')
