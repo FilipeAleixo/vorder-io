@@ -19,6 +19,10 @@ var Vorder = function(options) {
   this.recorder = null;
   this.speechEvents = null;
   this.orderAudio=null;
+
+  // Note: it's probably not safe so send the JWT before the handshake is done (even though I didn't look into it because that only came up
+  // to me as I'm finishing the project anyways, so there's no point on fixing now). But next time, do it instead after wss connection
+  // has been established, so that the JWT is sent through encrypted connection. See https://github.com/auth0-community/auth0-socketio-jwt
   this.socketio = io(`wss://${window.backendEndpoint}`, 
     {
       query: 
