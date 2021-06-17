@@ -1,31 +1,18 @@
-# nextjs-starter-dimension
-A Next.js starter based on the Dimension site template, designed by HTML5 UP. Check out https://codebushi.com/nextjs-website-starters/ for more Next.js starters and templates.
+# vorder-io
 
-## Preview
+**vorder-io** is the Next.js front-end for Vorder, a Crypto trading voice assistant. 
 
-http://nextjs-dimension.surge.sh/
+This project is done to be hosted on AWS Amplify, using Server Side Rendering.
 
-## Getting Started
+The back-end is in **vorder-eb**, which uses Elastic Beanstalk. It would take significant work, but that back-end could be replaced by Lambda API infrastructure directly using Amplify, so that the whole Vorder project would be limited to this repo.
 
-To get started, simply clone the repository and run `npm install`
+This single page presentation website is based on https://github.com/codebushi/nextjs-starter-dimension
 
-```
-# Clone the repo
-git clone https://github.com/codebushi/nextjs-starter-dimension.git
+## Installation
 
-# Move into the new directory
-cd nextjs-starter-dimension/
+Create **master** and **dev** environments on Amplify and connect each one of them to the respective CodeCommit branches for CI/CD.
 
-# Install npm packages
-npm install
+That's pretty much it, the rest is just done using the Amplify CLI. 
 
-# Start up the next.js dev server, browse to http://localhost:3000/
-npm run dev
-```
-
-## Generating the Static Site
-
-```
-# Build and export the site, the static files are generated in the out/ folder
-npm run export
-```
+## Important
+Careful when merging **dev** into **master** or the other way around, because the file aws-exports.js is specific to each of the environments. To get the respective file for each environment after a merge, simply do **amplify pull**.
